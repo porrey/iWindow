@@ -29,9 +29,21 @@ namespace Porrey.iWindow.Repositories
                 this.SaveSetting<string>(MagicValue.Property.TemperatureUnit, value);
             }
         }
-        #endregion
 
-        public T GetSetting<T>(string name, T defaultValue)
+		public string[] NtpServers
+		{
+			get
+			{
+				return this.GetSetting<string[]>(MagicValue.Property.NtpServers, MagicValue.Defaults.NtpServers);
+			}
+			set
+			{
+				this.SaveSetting<string[]>(MagicValue.Property.NtpServers, value);
+			}
+		}
+		#endregion
+
+		public T GetSetting<T>(string name, T defaultValue)
 		{
 			T returnValue = default(T);
 

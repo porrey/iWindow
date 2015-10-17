@@ -10,6 +10,7 @@ using Porrey.iWindow.Common;
 using Porrey.iWindow.Event.Models;
 using Porrey.iWindow.Interfaces;
 using Porrey.iWindow.Repositories;
+using Porrey.iWindow.Services;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml;
@@ -33,9 +34,21 @@ namespace Porrey.iWindow
             container.RegisterInstance<ISessionStateService>(this.SessionStateService);
             container.RegisterInstance<IResourceLoader>(new ResourceLoaderAdapter(new ResourceLoader()));
             container.RegisterType<IApplicationSettingsRepository, ApplicationSettingsRepository>(new ContainerControlledLifetimeManager());
-        }
 
-        protected override void OnApplicationInitialize(IActivatedEventArgs args)
+			// ***
+			// *** Background Services
+			// ***
+			container.RegisterType<IBackgroundService, TimerService>(MagicValue.BackgroundService.Timer, new ContainerControlledLifetimeManager());
+			container.RegisterType<IBackgroundService, NtpService>(MagicValue.BackgroundService.Ntp, new ContainerControlledLifetimeManager());
+			container.RegisterType<IBackgroundService, KeypadService>(MagicValue.BackgroundService.Keypad, new ContainerControlledLifetimeManager());
+
+			// ***
+			// *** View Models
+			// ***
+
+		}
+
+		protected override void OnApplicationInitialize(IActivatedEventArgs args)
 		{
 			base.OnApplicationInitialize(args);
 		}

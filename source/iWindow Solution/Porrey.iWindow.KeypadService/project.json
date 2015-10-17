@@ -1,12 +1,8 @@
 ﻿{
   "dependencies": {
-    "IoT.Temperature": "1.0.1",
+    "IoT.Keypad": "1.0.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Newtonsoft.Json": "7.0.1",
-    "Prism.Mvvm": "1.1.1",
     "Prism.PubSubEvents": "1.1.2",
-    "Prism.StoreApps": "2.0.0",
-    "Prism.Unity.Bootstrapper": "2.0.2-prerelease",
     "Unity": "3.5.1405-prerelease"
   },
   "frameworks": {

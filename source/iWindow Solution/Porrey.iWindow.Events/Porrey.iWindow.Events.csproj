@@ -110,6 +110,7 @@
     <Compile Include="Events.cs" />
     <Compile Include="Models\ApplicationSettingChangedEventArgs.cs" />
     <Compile Include="Models\DebugEventArgs.cs" />
+    <Compile Include="Models\TimerEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\Porrey.iWindow.Events.rd.xml" />
   </ItemGroup>
